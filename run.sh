@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export TELEGRAM_BOT_TOKEN=$(jq -r '.TELEGRAM_BOT_TOKEN' /data/options.json)
-export PAPERLESS_URL=$(jq -r '.PAPERLESS_URL' /data/options.json)
-export PAPERLESS_TOKEN=$(jq -r '.PAPERLESS_TOKEN' /data/options.json)
+export TELEGRAM_BOT_TOKEN=$(python -c "import json; print(json.load(open('/data/options.json'))['TELEGRAM_BOT_TOKEN'])")
+export PAPERLESS_URL=$(python -c "import json; print(json.load(open('/data/options.json'))['PAPERLESS_URL'])")
+export PAPERLESS_TOKEN=$(python -c "import json; print(json.load(open('/data/options.json'))['PAPERLESS_TOKEN'])")
 
 python -m paperless_bot
