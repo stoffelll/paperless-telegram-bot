@@ -7,7 +7,7 @@ arch:
   - aarch64
   - amd64
   - armv7
-image: "geiserx/paperless-telegram-bot"
+image: "drumsergio/paperless-telegram-bot:latest"
 init: false
 schema:
   TELEGRAM_BOT_TOKEN: str
