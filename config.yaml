@@ -1,0 +1,19 @@
+name: "Paperless Telegram Bot"
+version: "1.0.0"
+slug: "paperless_telegram_bot"
+description: "A Telegram bot to upload documents directly to Paperless-ngx"
+url: "https://github.com/geiserx/paperless-telegram-bot"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+image: "geiserx/paperless-telegram-bot"
+init: false
+schema:
+  TELEGRAM_BOT_TOKEN: str
+  PAPERLESS_URL: str
+  PAPERLESS_TOKEN: str
+options:
+  TELEGRAM_BOT_TOKEN: ""
+  PAPERLESS_URL: "http://paperless:8000"
+  PAPERLESS_TOKEN: ""
