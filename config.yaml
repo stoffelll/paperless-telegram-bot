@@ -2,12 +2,12 @@ name: "Paperless Telegram Bot"
 version: "1.0.0"
 slug: "paperless_telegram_bot"
 description: "A Telegram bot to upload documents directly to Paperless-ngx"
-url: "https://github.com/geiserx/paperless-telegram-bot"
+url: "https://github.com/GeiserX/paperless-telegram-bot"
+image: "drumsergio/paperless-telegram-bot:latest"
 arch:
   - aarch64
   - amd64
   - armv7
-image: "drumsergio/paperless-telegram-bot"
 init: false
 schema:
   TELEGRAM_BOT_TOKEN: str
