@@ -17,3 +17,7 @@ options:
   TELEGRAM_BOT_TOKEN: ""
   PAPERLESS_URL: "http://paperless:8000"
   PAPERLESS_TOKEN: ""
+map:
+  TELEGRAM_BOT_TOKEN: env
+  PAPERLESS_URL: env
+  PAPERLESS_TOKEN: env
