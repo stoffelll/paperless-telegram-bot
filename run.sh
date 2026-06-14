@@ -1,17 +1,14 @@
 #!/bin/bash
 
-echo "=== DEBUG INFO ==="
-echo "Current user: $(whoami)"
-echo "User ID: $(id)"
-echo "=== /data/ contents ==="
-ls -la /data/ 2>&1 || echo "/data/ does not exist"
-echo "=== /data/options.json ==="
-ls -la /data/options.json 2>&1 || echo "options.json not found"
-cat /data/options.json 2>&1 || echo "Cannot read options.json"
-echo "=== /etc/passwd users ==="
-cat /etc/passwd
-echo "=== ENV ==="
-env
-echo "=== END DEBUG ==="
+# Optionen als Root auslesen
+export TELEGRAM_BOT_TOKEN=$(cat /data/options.json | python -c "import sys,json; print(json.load(sys.stdin)['TELEGRAM_BOT_TOKEN'])")
+export PAPERLESS_URL=$(cat /data/options.json | python -c "import sys,json; print(json.load(sys.stdin)['PAPERLESS_URL'])")
+export PAPERLESS_TOKEN=$(cat /data/options.json | python -c "import sys,json; print(json.load(sys.stdin)['PAPERLESS_TOKEN'])")
 
-sleep 300
+# Als paperlessbot User starten mit den Umgebungsvariablen
+exec su -s /bin/sh -c "
+  export TELEGRAM_BOT_TOKEN='$TELEGRAM_BOT_TOKEN'
+  export PAPERLESS_URL='$PAPERLESS_URL'
+  export PAPERLESS_TOKEN='$PAPERLESS_TOKEN'
+  python -m paperless_bot
+" paperlessbot
