@@ -1,5 +1,5 @@
 name: "Paperless Telegram Bot"
-version: "1.0.4"
+version: "1.0.5"
 slug: "paperless_telegram_bot"
 description: "A Telegram bot to upload documents directly to Paperless-ngx"
 url: "https://github.com/GeiserX/paperless-telegram-bot"
