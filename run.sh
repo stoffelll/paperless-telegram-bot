@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# Optionen als Root auslesen
-TELEGRAM_BOT_TOKEN=$(python -c "import json; print(json.load(open('/data/options.json'))['TELEGRAM_BOT_TOKEN'])")
-PAPERLESS_URL=$(python -c "import json; print(json.load(open('/data/options.json'))['PAPERLESS_URL'])")
-PAPERLESS_TOKEN=$(python -c "import json; print(json.load(open('/data/options.json'))['PAPERLESS_TOKEN'])")
+echo "=== DEBUG INFO ==="
+echo "Current user: $(whoami)"
+echo "User ID: $(id)"
+echo "=== /data/ contents ==="
+ls -la /data/ 2>&1 || echo "/data/ does not exist"
+echo "=== /data/options.json ==="
+ls -la /data/options.json 2>&1 || echo "options.json not found"
+cat /data/options.json 2>&1 || echo "Cannot read options.json"
+echo "=== /etc/passwd users ==="
+cat /etc/passwd
+echo "=== ENV ==="
+env
+echo "=== END DEBUG ==="
 
-export TELEGRAM_BOT_TOKEN
-export PAPERLESS_URL
-export PAPERLESS_TOKEN
-
-# Als originaler User (appuser) die App starten
-su -s /bin/bash -c 'export TELEGRAM_BOT_TOKEN="'"$TELEGRAM_BOT_TOKEN"'" PAPERLESS_URL="'"$PAPERLESS_URL"'" PAPERLESS_TOKEN="'"$PAPERLESS_TOKEN"'"; python -m paperless_bot' appuser
+sleep 300
