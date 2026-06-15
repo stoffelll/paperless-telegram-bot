@@ -67,9 +67,8 @@ Before installing this add-on, make sure you have:
 ### How to Get a Paperless-ngx API Token
 
 1. Open your Paperless-ngx web interface
-2. Go to **Settings** → **Users & Groups** → click on your user
-3. Scroll down and click **Generate Token** (or copy the existing one)
-4. Alternatively, navigate directly to: `http://your-paperless-url/api/token/`
+2. Go to **My Profile** → **API-Authtification token** → generate or copy existing one
+3. Alternatively, have a look into: `https://docs.paperless-ngx.com/api/`
 ---
 
 ## Installation
