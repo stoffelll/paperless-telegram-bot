@@ -297,7 +297,7 @@ Contributions are welcome! Here's how you can help:
 If you encounter a bug or have a feature request:
 
 1. Check [existing issues](https://github.com/stoffelll/paperless-telegram-bot/issues) first
-2. Open a [new issue](issues/new) with:
+2. Open a [new issue](https://github.com/stoffelll/paperless-telegram-bot/issues/new) with:
    - A clear description of the problem
    - Your Home Assistant version
    - The add-on logs (from the **Log** tab)
